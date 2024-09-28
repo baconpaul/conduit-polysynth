@@ -147,7 +147,7 @@ struct ConduitClapEventMonitorEditor : public sst::jucegui::accessibility::Ignor
                 }
             };
             g.setColour(juce::Colours::white);
-            g.setFont(editor->fixedFace);
+            g.setFont(juce::FontOptions(editor->fixedFace));
 
 #define A(x) pt(#x, tp->x)
 #define ASC(x) pt(#x "/CSF", 1.f * tp->x / CLAP_SECTIME_FACTOR)
@@ -240,7 +240,7 @@ struct ConduitClapEventMonitorEditor : public sst::jucegui::accessibility::Ignor
                 txt = textSummary(ev);
                 break;
             }
-            g.setFont(juce::Font(editor.fixedFace).withHeight(10));
+            g.setFont(juce::FontOptions(editor.fixedFace).withHeight(10));
             g.setColour(juce::Colours::white);
             g.drawText(txt, 2, 0, width - 4, height, juce::Justification::centredLeft, true);
         }

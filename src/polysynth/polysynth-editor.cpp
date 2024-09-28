@@ -368,7 +368,7 @@ struct StatusPanel : jcmp::NamedPanel
         {
             auto lb = getLocalBounds().withTrimmedRight(33);
             auto bx = lb.withHeight(12);
-            auto ft = juce::Font(9);
+            auto ft = juce::FontOptions(9);
             g.setFont(ft);
             g.setColour(juce::Colours::white);
             auto d = [&](auto s) {

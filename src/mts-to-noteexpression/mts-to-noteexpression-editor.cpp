@@ -122,7 +122,7 @@ struct ConduitMTSToNoteExpressionEditor : public sst::jucegui::accessibility::Ig
             auto b = getLocalBounds().withHeight(20).withTrimmedLeft(3);
             auto ln = [&b, &g, this](auto s) {
                 g.setColour(juce::Colours::white);
-                g.setFont(juce::Font(editor->fixedFace).withHeight(12));
+                g.setFont(juce::Font(juce::FontOptions(editor->fixedFace)).withHeight(12));
                 g.drawText(s, b, juce::Justification::centredLeft);
                 b = b.translated(0, 20);
             };
@@ -152,7 +152,7 @@ struct ConduitMTSToNoteExpressionEditor : public sst::jucegui::accessibility::Ig
             auto b = getLocalBounds().withHeight(20).withTrimmedLeft(3);
             auto ln = [&b, &g, this](auto s) {
                 g.setColour(juce::Colours::white);
-                g.setFont(juce::Font(editor->fixedFace).withHeight(12));
+                g.setFont(juce::FontOptions(editor->fixedFace).withHeight(12));
                 g.drawText(s, b, juce::Justification::centredLeft);
                 b = b.translated(0, 20);
                 if (!getLocalBounds().contains(b))
