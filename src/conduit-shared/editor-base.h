@@ -416,19 +416,19 @@ Background<Content>::Background(const std::string &pluginName, const std::string
     base->replaceFontsWithTypeface(labelsTypeface);
     base->setFont(jucegui::components::MultiSwitch::Styles::styleClass,
                   jucegui::components::MultiSwitch::Styles::labelfont,
-                  juce::Font(labelsTypeface).withHeight(11));
+                  juce::FontOptions(labelsTypeface).withHeight(11));
     setStyle(base);
 
-    auto lbFont = juce::Font(24);
-    auto vsFont = juce::Font(12);
+    auto lbFont = juce::Font(juce::FontOptions(24));
+    auto vsFont = juce::Font(juce::FontOptions(12));
 
     if (labelsTypeface)
     {
-        lbFont = juce::Font(labelsTypeface).withHeight(24);
+        lbFont = juce::Font(juce::FontOptions(labelsTypeface)).withHeight(24);
     }
     if (versionTypeface)
     {
-        vsFont = juce::Font(versionTypeface).withHeight(13);
+        vsFont = juce::Font(juce::FontOptions(versionTypeface)).withHeight(13);
     }
 
     // FIXME do this with sst labels and a style class
@@ -459,7 +459,7 @@ Background<Content>::Background(const std::string &pluginName, const std::string
     debugLabel = std::move(dl);
 #endif
 
-    auto gb = std::make_unique<jcmp::GlyphButton>(jcmp::GlyphPainter::HAMBURGER);
+    auto gb = std::make_unique<jcmp::GlyphButton>(jcmp::GlyphPainter::ELLIPSIS_H);
     gb->setOnCallback([w = juce::Component::SafePointer(this)]() {
         if (w)
             w->buildBurger();

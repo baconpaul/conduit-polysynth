@@ -159,11 +159,14 @@ struct ConduitMIDI2SawSynth
 
     void setVoiceEndCallback(std::function<void(M2Voice *)> v) {}
 
-    constexpr int32_t voiceCountForInitializationAction(uint16_t port, uint16_t channel,
-                                                        uint16_t key, int32_t noteId,
-                                                        float velocity)
+    constexpr int32_t beginVoiceCreationTransaction(uint16_t port, uint16_t channel, uint16_t key,
+                                                    int32_t noteId, float velocity)
     {
         return 1;
+    }
+    constexpr void endVoiceCreationTransaction(uint16_t port, uint16_t channel, uint16_t key,
+                                               int32_t noteId, float velocity)
+    {
     }
     int32_t
     initializeMultipleVoices(std::array<M2Voice *, VMConfig::maxVoiceCount> &voiceInitWorkingBuffer,

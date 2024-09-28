@@ -215,7 +215,7 @@ struct ConduitMIDI2SawSynthEditor : public sst::jucegui::accessibility::IgnoredC
                 txt = textSummary(ev);
                 break;
             }
-            g.setFont(juce::Font(editor.fixedFace).withHeight(10));
+            g.setFont(juce::FontOptions(editor.fixedFace).withHeight(10));
             g.setColour(juce::Colours::white);
             g.drawText(txt, 2, 0, width - 4, height, juce::Justification::centredLeft, true);
         }
